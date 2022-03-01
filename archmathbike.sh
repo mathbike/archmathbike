@@ -14,8 +14,10 @@ git clone git://git.suckless.org/dmenu ~/.config/dmenu
 cd ~/.config/dwm && sudo make install
 cd ~/.config/st && sudo make install
 cd ~/.config/dmenu && sudo make install
-# cd home
-cd
+# clone config files
+
+
+
 # install yay
 git clone https://aur.archlinux.org/yay-git.git ~/.config/yay
 # make yay
