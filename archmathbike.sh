@@ -5,7 +5,7 @@
 # update pacman
 pacman -Syu --noconfirm
 # install packages
-pacman -S base-devel linux-headers linux-firmware xorg-server xorg-xinit xorg-xrandr xorg-xsetroot libxft libxinerama xclip alsa-utils pulseaudio ttf-jetbrains-mono vim man-db git github-cli gnupg pass passmenu
+pacman -S --noconfirm base-devel linux-headers linux-firmware xorg-server xorg-xinit xorg-xrandr xorg-xsetroot libxft libxinerama xclip alsa-utils pulseaudio ttf-jetbrains-mono vim man-db git github-cli gnupg pass passmenu
 # clone dwm, st, dmenu
 git clone git://git.suckless.org/dwm ~/.config/dwm
 git clone git://git.suckless.org/st ~/.config/st
