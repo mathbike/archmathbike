@@ -3,9 +3,9 @@
 # archmathbike
 
 # update pacman
-pacman -Syu --noconfirm
+sudo pacman -Syu --noconfirm
 # install packages
-pacman -S --noconfirm base-devel linux-headers linux-firmware xorg-server xorg-xinit xorg-xrandr xorg-xsetroot libxft libxinerama xclip alsa-utils pulseaudio ttf-jetbrains-mono vim man-db git github-cli gnupg pass passmenu
+sudo pacman -S --noconfirm base-devel linux-headers linux-firmware xorg-server xorg-xinit xorg-xrandr xorg-xsetroot libxft libxinerama xclip alsa-utils pulseaudio ttf-jetbrains-mono vim man-db git github-cli gnupg pass passmenu
 # clone dwm, st, dmenu
 git clone https://github.com/mathbike/dwm.git ~/.config/dwm
 git clone https://github.com/mathbike/st.git ~/.config/st
