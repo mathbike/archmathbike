@@ -18,9 +18,9 @@ cd ~/.config/dmenu && sudo make install && cd
 git clone https://github.com/mathbike/commands.git
 git clone https://github.com/mathbike/scripts.git
 # clone config files
-git clone --separate-git-dir=$HOME/.dotfiles https://github.com/mathbike/dotfiles.git tmpdotfiles
-rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
-rm -r tmpdotfiles
+git clone --separate-git-dir=$HOME/.dotfiles https://github.com/mathbike/dotfiles.git ~/tmpdotfiles
+rsync --recursive --verbose --exclude '.git' ~/tmpdotfiles/ $HOME/
+rm -r ~/tmpdotfiles
 # install yay
 git clone https://aur.archlinux.org/yay-git.git ~/.config/yay
 # make yay
