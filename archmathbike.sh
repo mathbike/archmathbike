@@ -61,6 +61,8 @@ git clone https://aur.archlinux.org/yay-git.git ~/.config/yay
 cd ~/.config/yay && makepkg -si --noconfirm
 # brave
 yay -S brave-bin --noconfirm
+rm -rf  ~/.config/BraveSoftware/Brave-Browser/Default
+mv ~/bookmarks/Default ~/.config/BraveSoftware/Brave-Browser/Default
 # lf
 yay -S lf --noconfirm
 
