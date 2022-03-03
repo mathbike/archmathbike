@@ -5,7 +5,7 @@ cd ~/tmpdotfiles
 
 # delete dotfiles of the same name as those we already have:
 # list all dotfiles and save to temp txt file, remove . and ..
-ls -d .* | awk '$1 != "." {print $1}' >> ~/1.txt
+ls -d .* | awk '$1 != "." {print $1}' >> 1.txt
 cat 1.txt | awk '$1 != ".." {print $1}' >> ~/2.txt
 # cd home
 cd ~
