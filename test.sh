@@ -18,7 +18,7 @@ do
 	rm -rf ${line}
 done
 # delete temp txt files
-rm -rf 1.txt 2.txt /tmpdotfiles
+rm -rf 1.txt 2.txt  ~/tmpdotfiles
 
 # clone config files
 git clone --bare https://github.com/mathbike/.dotfiles.git ~/.dotfiles
