@@ -48,7 +48,7 @@ git clone https://github.com/mathbike/dwm.git ~/.config/dwm
 cd ~/.config/dwm && sudo make install
 # dwmblocks
 git clone https://github.com/mathbike/dwmblocks.git ~/.config/dwmblocks
-cd ~/.config/dwmbocks && sudo make install
+cd ~/.config/dwmblocks && sudo make install
 # st
 git clone https://github.com/mathbike/st.git ~/.config/st
 cd ~/.config/st && sudo make install
@@ -62,7 +62,7 @@ cd ~/.config/yay && makepkg -si --noconfirm
 # brave
 yay -S brave-bin --noconfirm
 rm -rf  ~/.config/BraveSoftware/Brave-Browser/Default
-mv ~/bookmarks/Default ~/.config/BraveSoftware/Brave-Browser/Default
+cp -r  ~/bookmarks/Default ~/.config/BraveSoftware/Brave-Browser
 # lf
 yay -S lf --noconfirm
 
