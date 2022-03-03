@@ -7,12 +7,15 @@ sudo pacman -Syu --noconfirm
 # install packages
 sudo pacman -S --noconfirm base-devel linux-headers linux-firmware xorg-server xorg-xinit xorg-xrandr xorg-xsetroot libxft libxinerama xclip alsa-utils pulseaudio ttf-jetbrains-mono gvim man-db git github-cli gnupg pass passmenu bashtop
 
-# clone config files
-git clone --bare https://github.com/mathbike/.dotfiles.git ~/.dotfiles && cd ~/.dotfiles
+git clone https://github.com/mathbike/.dotfiles.git ~/tmpdotfiles
+cd ~/tmpdotfiles
+
 # delete dotfiles of the same name as those we already have:
 # list all dotfiles and save to temp txt file, remove . and ..
-ls -d .* | awk '$1 != "." {print $1}' >> ~/1.txt
-cat 1.txt | awk '$1 != ".." {print $1}' >> ~/2.txt && cd ~
+ls -d .* | awk '$1 != "." {print $1}' >> 1.txt
+cat 1.txt | awk '$1 != ".." {print $1}' >> ~/2.txt
+# cd home
+cd ~
 # loop variables
 file="2.txt"
 lines=$(cat $file)
@@ -22,9 +25,16 @@ do
 	rm -rf ${line}
 done
 # delete temp txt files
-rm -rf 1.txt 2.txt
+rm -rf 1.txt 2.txt  ~/tmpdotfiles
+
+# clone config files
+git clone --bare https://github.com/mathbike/.dotfiles.git ~/.dotfiles
+# temp config
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # checkout repo
-/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout
+config checkout
+# untracked files
+config config --local status.showUntrackedFiles no
 
 # clone directories
 git clone https://github.com/mathbike/bookmarks.git
