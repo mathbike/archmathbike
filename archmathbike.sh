@@ -28,7 +28,7 @@ dotsdelete() {
 	rm -rf 2.txt  ~/tmpdotfiles
 }
 
-# clone config dotfiles:
+# clone dotfiles:
 dotfiles() {
 	git clone --bare https://github.com/mathbike/.dotfiles.git ~/.dotfiles
 	# temp config alias
@@ -37,13 +37,6 @@ dotfiles() {
 	config checkout
 	# do not show untracked files
 	config config --local status.showUntrackedFiles no
-}
-
-# clone directories:
-directories() {
-	git clone https://github.com/mathbike/bookmarks.git
-	git clone https://github.com/mathbike/commands.git
-	git clone https://github.com/mathbike/scripts.git	
 }
 
 # install configuration:
@@ -81,6 +74,13 @@ aurpackages() {
 	yay -S lf --noconfirm
 }
 
+# clone directories:
+directories() {
+	git clone https://github.com/mathbike/bookmarks.git
+	git clone https://github.com/mathbike/commands.git
+	git clone https://github.com/mathbike/scripts.git	
+}
+
 # clone symlinks:
 symlinks() {
 
@@ -91,4 +91,13 @@ housekeeping() {
 	# rename Downloads directory
 	rm -rf Downloads && mkdir dl
 }
+
+dotsdelete
+dotfiles
+configuration
+aur
+aurpackages
+directories
+symlinks
+housekeeping
 
