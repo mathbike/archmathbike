@@ -2,6 +2,22 @@
 
 # arcin
 
+# delete existing partitions and format drive
+
+# connect to the internet
+
+# update the keyrings
+
+
+
+
+
+
+
+
+
+
+
 
 
 # set up encryption
