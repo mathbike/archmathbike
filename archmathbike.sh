@@ -8,7 +8,8 @@ sudo pacman -S --noconfirm \
 	xorg-server xorg-xinit xorg-xrandr xorg-xsetroot libxft libxinerama xclip \
 	network manager alsa-utils pulseaudio bashtop rsync \
 	ttf-jetbrains-mono gvim man-db git github-cli \
-	gnupg pass passmenu zathura python-pip
+	gnupg pass passmenu zathura python-pip \
+	zathura youtube-dl
 
 # delete dotfiles that we already have:
 dotsdelete() {
