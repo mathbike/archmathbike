@@ -3,13 +3,15 @@
 # archmathbike
 
 # install packages:
-sudo pacman -S --noconfirm \
-	base-devel linux-headers linux-firmware \
-	xorg-server xorg-xinit xorg-xrandr xorg-xsetroot libxft libxinerama xclip \
-	network manager alsa-utils pulseaudio bashtop rsync \
-	ttf-jetbrains-mono gvim man-db git github-cli \
-	gnupg pass passmenu zathura python-pip \
-	zathura youtube-dl
+packages() {
+	sudo pacman -S --noconfirm \
+		base-devel linux-headers linux-firmware \
+		xorg-server xorg-xinit xorg-xrandr xorg-xsetroot libxft libxinerama xclip \
+		network manager alsa-utils pulseaudio bashtop rsync \
+		ttf-jetbrains-mono gvim man-db git github-cli \
+		gnupg pass passmenu zathura python-pip \
+		zathura youtube-dl
+}
 
 # delete dotfiles that we already have:
 dotsdelete() {
@@ -84,8 +86,13 @@ directories() {
 
 # clone symlinks:
 symlinks() {
-
+	:
 }
+
+# configure firewall
+firewall() {
+	
+}	
 
 # general housekeeping:
 housekeeping() {
@@ -93,6 +100,7 @@ housekeeping() {
 	rm -rf Downloads && mkdir dl
 }
 
+packages
 dotsdelete
 dotfiles
 configuration
@@ -100,5 +108,6 @@ aur
 aurpackages
 directories
 symlinks
+firewall
 housekeeping
 
