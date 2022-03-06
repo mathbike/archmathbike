@@ -94,6 +94,7 @@ firewall() {
 	sudo systemctl enable ufw.service
 	sudo ufw default allow outgoing
 	sudo ufw default deny incoming
+	sudo ufw logging off
 	sudo ufw enable
 }	
 
@@ -117,6 +118,6 @@ aurpackages
 directories
 symlinks
 firewall
-networkmanageervicel
+networkmanager
 housekeeping
 
