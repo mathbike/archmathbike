@@ -7,9 +7,9 @@ packages() {
 	sudo pacman -S --noconfirm \
 		base-devel linux-headers linux-firmware \
 		xorg-server xorg-xinit xorg-xrandr xorg-xsetroot libxft libxinerama xclip \
-		network manager alsa-utils pulseaudio bashtop rsync \
+		networkmanager network-manager-applet alsa-utils pulseaudio bashtop rsync \
 		ttf-jetbrains-mono gvim man-db git github-cli \
-		gnupg pass passmenu zathura python-pip \
+		ufw gnupg pass passmenu python-pip \
 		zathura youtube-dl
 }
 
@@ -91,8 +91,16 @@ symlinks() {
 
 # configure firewall
 firewall() {
-	
+	sudo systemctl enable ufw.service
+	sudo ufw default deny incoming
+	sudo ufw default allow outgoing
+	sudo ufw enable
 }	
+
+# configure networkmanager
+networkmanager() {
+	:
+}
 
 # general housekeeping:
 housekeeping() {
@@ -108,6 +116,7 @@ aurhelper
 aurpackages
 directories
 symlinks
-firewall
+firewal
+networkmanageervicel
 housekeeping
 
