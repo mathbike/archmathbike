@@ -61,7 +61,7 @@ configuration() {
 }
 
 # install aur package manager:
-aur() {
+aurhelper() {
 	# yay
 	git clone https://aur.archlinux.org/yay-git.git ~/.config/yay
 	cd ~/.config/yay && makepkg -si --noconfirm
@@ -104,7 +104,7 @@ packages
 dotsdelete
 dotfiles
 configuration
-aur
+aurhelper
 aurpackages
 directories
 symlinks
