@@ -92,8 +92,8 @@ symlinks() {
 # configure firewall
 firewall() {
 	sudo systemctl enable ufw.service
-	sudo ufw default deny incoming
 	sudo ufw default allow outgoing
+	sudo ufw default deny incoming
 	sudo ufw enable
 }	
 
@@ -116,7 +116,7 @@ aurhelper
 aurpackages
 directories
 symlinks
-firewal
+firewall
 networkmanageervicel
 housekeeping
 
