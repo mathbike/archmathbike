@@ -92,8 +92,8 @@ symlinks() {
 # configure firewall
 firewall() {
 	sudo systemctl enable ufw.service
-	sudo ufw default allow outgoing
 	sudo ufw default deny incoming
+	sudo ufw default allow outgoing
 	sudo ufw logging off
 	sudo ufw enable
 }	
