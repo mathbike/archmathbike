@@ -10,7 +10,7 @@ packages() {
 		networkmanager network-manager-applet alsa-utils pulseaudio bashtop rsync \
 		ttf-jetbrains-mono gvim man-db git github-cli \
 		ufw gnupg pass passmenu python-pip xdotool \
-		zathura youtube-dl
+		zathura youtube-dl brightnessctl
 }
 
 # delete dotfiles that we already have:
