@@ -105,7 +105,9 @@ firewall() {
 
 # configure networkmanager
 networkmanager() {
-	:
+	ln -s ~/.config/dwmstatus/sb-battery.sh /usr/local/bin
+	ln -s ~/.config/dwmstatus/sb-date.sh /usr/local/bin
+	ln -s ~/.config/dwmstatus/sb-volume.sh /usr/local/bin
 }
 
 # general housekeeping:
