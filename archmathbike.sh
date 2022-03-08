@@ -33,9 +33,14 @@ dotsdelete() {
 
 # clone dotfiles:
 dotfiles() {
+	# clone .dotfiles
 	git clone --bare https://github.com/mathbike/.dotfiles.git ~/.dotfiles
 	# temp config alias
 	alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+	# delete dotfiles that we already have
+	mkdir -p .config-backup && \
+	config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
+	xargs -I{} mv {} .config-backup/{}
 	# checkout repo
 	config checkout
 	# do not show untracked files
@@ -110,7 +115,7 @@ housekeeping() {
 }
 
 packages
-dotsdelete
+#dotsdelete
 dotfiles
 configuration
 aurhelper
