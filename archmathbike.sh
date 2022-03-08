@@ -89,9 +89,12 @@ directories() {
 	git clone https://github.com/mathbike/scripts.git	
 }
 
-# clone symlinks:
+# set symlinks:
 symlinks() {
-	:
+	ln -s ~/.config/dwmstatusbar/sb-battery.sh /usr/local/bin
+	ln -s ~/.config/dwmstatusbar/sb-date.sh /usr/local/bin
+	ln -s ~/.config/dwmstatusbar/sb-volume.sh /usr/local/bin
+	ln -s ~/.config/dwmstatusbar/sb-brightness.sh /usr/local/bin
 }
 
 # configure firewall
@@ -105,10 +108,7 @@ firewall() {
 
 # configure networkmanager
 networkmanager() {
-	ln -s ~/.config/dwmstatusbar/sb-battery.sh /usr/local/bin
-	ln -s ~/.config/dwmstatusbar/sb-date.sh /usr/local/bin
-	ln -s ~/.config/dwmstatusbar/sb-volume.sh /usr/local/bin
-	ln -s ~/.config/dwmstatusbar/sb-brightness.sh /usr/local/bin
+	:	
 }
 
 # general housekeeping:
@@ -128,6 +128,6 @@ aurpackages
 directories
 symlinks
 firewall
-networkmanager
+#networkmanager
 housekeeping
 
