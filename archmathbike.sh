@@ -9,7 +9,7 @@ packages() {
 		xorg-server xorg-xinit xorg-xrandr xorg-xsetroot libxft libxinerama xclip \
 		networkmanager network-manager-applet alsa-utils pulseaudio bashtop rsync \
 		ttf-jetbrains-mono gvim man-db git github-cli \
-		ufw gnupg pass passmenu python-pip \
+		ufw gnupg pass passmenu python-pip xdotool \
 		zathura youtube-dl
 }
 
