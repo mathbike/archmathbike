@@ -115,6 +115,8 @@ networkmanager() {
 housekeeping() {
 	# rename Downloads directory
 	rm -rf Downloads && mkdir dl
+	# set the timezone
+	sudo timedatectl set-timezone America/Toronto
 }
 
 packages
