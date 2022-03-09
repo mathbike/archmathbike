@@ -10,7 +10,7 @@ packages() {
 		networkmanager network-manager-applet alsa-utils pulseaudio bashtop rsync \
 		ttf-jetbrains-mono gvim man-db git github-cli \
 		ufw gnupg pass passmenu python-pip xdotool \
-		zathura youtube-dl brightnessctl nodejs npm gimp inkscape tlp \
+		zathura zathura-pdf-mupdf youtube-dl brightnessctl nodejs npm gimp inkscape tlp \
 		linux-lts linux-lts-headers
 }
 
