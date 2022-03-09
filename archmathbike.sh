@@ -97,6 +97,7 @@ symlinks() {
 	ln -s ~/.config/dwmstatusbar/sb-date.sh /usr/local/bin
 	ln -s ~/.config/dwmstatusbar/sb-volume.sh /usr/local/bin
 	ln -s ~/.config/dwmstatusbar/sb-brightness.sh /usr/local/bin
+	ln -s ~/tlp.conf /etc/
 }
 
 # configure firewall
