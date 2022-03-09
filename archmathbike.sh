@@ -10,7 +10,7 @@ packages() {
 		networkmanager network-manager-applet alsa-utils pulseaudio bashtop rsync \
 		ttf-jetbrains-mono gvim man-db git github-cli \
 		ufw gnupg pass passmenu python-pip xdotool \
-		zathura youtube-dl brightnessctl nodejs npm gimp inkscape
+		zathura youtube-dl brightnessctl nodejs npm gimp inkscape tlp
 }
 
 # delete dotfiles that we already have:
@@ -119,6 +119,8 @@ housekeeping() {
 	rm -rf Downloads && mkdir dl
 	# set the timezone
 	sudo timedatectl set-timezone America/Toronto
+	# enable tlp
+	sudo systemctl enable tlp.service
 }
 
 packages
