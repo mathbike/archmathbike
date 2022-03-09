@@ -10,7 +10,7 @@ packages() {
 		networkmanager network-manager-applet alsa-utils pulseaudio bashtop rsync \
 		ttf-jetbrains-mono gvim man-db git github-cli \
 		ufw gnupg pass passmenu python-pip xdotool \
-		zathura youtube-dl brightnessctl
+		zathura youtube-dl brightnessctl nodejs npm gimp inkscape
 }
 
 # delete dotfiles that we already have:
@@ -80,6 +80,8 @@ aurpackages() {
 	cp -r  ~/bookmarks/Default ~/.config/BraveSoftware/Brave-Browser
 	# lf
 	yay -S lf --noconfirm
+	# FreeCAD
+	yay -S freecad-git --noconfirm
 }
 
 # clone directories:
