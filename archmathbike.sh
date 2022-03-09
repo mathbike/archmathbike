@@ -121,6 +121,8 @@ housekeeping() {
 	sudo timedatectl set-timezone America/Toronto
 	# enable tlp
 	sudo systemctl enable tlp.service
+	# npm live server
+	sudo npm install -g live-server
 }
 
 packages
