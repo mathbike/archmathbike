@@ -125,6 +125,9 @@ housekeeping() {
 	sudo systemctl enable tlp.service
 	# npm live server
 	sudo npm install -g live-server
+	# vim-plug
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+		    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 packages
