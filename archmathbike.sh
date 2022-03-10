@@ -7,7 +7,7 @@ packages() {
 	sudo pacman -S --noconfirm \
 		base-devel linux-headers linux-firmware \
 		xorg-server xorg-xinit xorg-xrandr xorg-xsetroot libxft libxinerama xclip \
-		networkmanager network-manager-applet alsa-utils pulseaudio bashtop rsync \
+		alsa-utils pulseaudio bashtop rsync \
 		ttf-jetbrains-mono gvim man-db git github-cli \
 		ufw gnupg pass passmenu python-pip xdotool \
 		zathura zathura-pdf-mupdf youtube-dl brightnessctl nodejs npm gimp inkscape tlp \
