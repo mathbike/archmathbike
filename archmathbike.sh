@@ -128,6 +128,9 @@ housekeeping() {
 	# vimrc stuff
 	rm -rf /etc/vimrc
 	ln -s ~/.vimrc /etc/vimrc
+	# zathurarc stuff
+	mkdir ~/.config/zathura
+	ln -s ~/zathurarc ~/.config/zathura
 }
 
 packages
