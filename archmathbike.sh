@@ -125,6 +125,9 @@ housekeeping() {
 	sudo systemctl enable tlp.service
 	# npm live server
 	sudo npm install -g live-server
+	# vimrc stuff
+	rm -rf /etc/vimrc
+	ln -s ~/.vimrc /etc/vimrc
 }
 
 packages
