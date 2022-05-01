@@ -131,6 +131,8 @@ housekeeping() {
 	# zathurarc stuff
 	mkdir ~/.config/zathura
 	ln -s ~/zathurarc ~/.config/zathura
+	# disable touchscreen
+	xinput -disable 13
 }
 
 packages
