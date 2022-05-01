@@ -133,6 +133,8 @@ housekeeping() {
 	ln -s ~/zathurarc ~/.config/zathura
 	# disable touchscreen
 	xinput -disable 13
+	# disable webcam
+	xinput -disable 12
 }
 
 packages
