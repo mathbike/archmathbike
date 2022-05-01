@@ -11,7 +11,7 @@ packages() {
 		ttf-jetbrains-mono gvim man-db git github-cli \
 		ufw gnupg pass passmenu python-pip xdotool \
 		zathura zathura-pdf-mupdf youtube-dl brightnessctl nodejs npm gimp inkscape tlp \
-		linux-lts linux-lts-headers texlive-most
+		linux-lts linux-lts-headers texlive-most code
 }
 
 # delete dotfiles that we already have:
