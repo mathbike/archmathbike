@@ -6,7 +6,7 @@
 packages() {
 	sudo pacman -S --noconfirm \
 		base-devel linux-headers linux-firmware \
-		xorg-server xorg-xinit xorg-xrandr xorg-xsetroot libxft libxinerama xclip \
+		xorg-server xorg-xinit xorg-xrandr xorg-xsetroot libxft libxinerama xclip xorg-xinput \
 		alsa-utils pulseaudio bashtop rsync \
 		ttf-jetbrains-mono gvim man-db git github-cli \
 		ufw gnupg pass passmenu python-pip xdotool \
