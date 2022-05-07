@@ -39,9 +39,9 @@ dotfiles() {
 	# temp config alias
 	alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 	# delete dotfiles that we already have
-	mkdir -p .config-backup && \
-	config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
-	xargs -I{} mv {} .config-backup/{}
+	#mkdir -p .config-backup && \
+	#config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
+	#xargs -I{} mv {} .config-backup/{}
 	# checkout repo
 	config checkout
 	# do not show untracked files
@@ -110,11 +110,6 @@ firewall() {
 	sudo ufw enable
 }	
 
-# configure networkmanager
-networkmanager() {
-	:	
-}
-
 # general housekeeping:
 housekeeping() {
 	# rename Downloads directory
@@ -131,10 +126,21 @@ housekeeping() {
 	# zathurarc stuff
 	mkdir ~/.config/zathura
 	ln -s ~/zathurarc ~/.config/zathura
+}
+
+asus() {
 	# disable touchscreen
 	xinput -disable 13
 	# disable webcam
 	xinput -disable 12
+}
+
+T420() {
+	:
+}
+
+X220() {
+	:
 }
 
 packages
@@ -146,6 +152,8 @@ aurpackages
 directories
 symlinks
 firewall
-#networkmanager
 housekeeping
+#asus
+#T420
+#X220
 
