@@ -81,7 +81,10 @@ aurpackages() {
 	cp -r  ~/bookmarks/Default ~/.config/BraveSoftware/Brave-Browser
 	# lf
 	yay -S lf --noconfirm
-	# FreeCAD
+}
+
+# FreeCAD
+freecad() {
 	yay -S freecad-git --noconfirm
 }
 
@@ -144,11 +147,12 @@ X220() {
 }
 
 packages
-#dotsdelete
+dotsdelete
 dotfiles
 configuration
 aurhelper
 aurpackages
+#freecad
 directories
 symlinks
 firewall
