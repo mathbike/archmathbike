@@ -66,6 +66,13 @@ configuration() {
 	cd ~/.config/dmenu && sudo make install && cd
 }
 
+# clone directories:
+directories() {
+	git clone https://github.com/mathbike/commands.git
+	git clone https://github.com/mathbike/scripts.git
+	git clone https://github.com/mathbike/browserconfig.git
+}
+
 # install aur package manager:
 aurhelper() {
 	# yay
@@ -78,7 +85,7 @@ aurpackages() {
 	# brave
 	yay -S brave-bin --noconfirm
 	rm -rf  ~/.config/BraveSoftware/Brave-Browser/Default
-	cp -r  ~/bookmarks/Default ~/.config/BraveSoftware/Brave-Browser
+	cp -r  ~/browserconfig/Default ~/.config/BraveSoftware/Brave-Browser
 	# lf
 	yay -S lf --noconfirm
 }
@@ -86,13 +93,6 @@ aurpackages() {
 # FreeCAD
 freecad() {
 	yay -S freecad-git --noconfirm
-}
-
-# clone directories:
-directories() {
-	git clone https://github.com/mathbike/bookmarks.git
-	git clone https://github.com/mathbike/commands.git
-	git clone https://github.com/mathbike/scripts.git	
 }
 
 # set symlinks:
