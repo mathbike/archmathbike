@@ -10,8 +10,8 @@ packages() {
 		alsa-utils pulseaudio bashtop rsync \
 		ttf-jetbrains-mono gvim man-db git github-cli \
 		ufw gnupg pass passmenu python-pip xdotool \
-		zathura zathura-pdf-mupdf youtube-dl brightnessctl nodejs npm gimp inkscape tlp \
-		linux-lts linux-lts-headers texlive-most code
+		zathura zathura-pdf-mupdf youtube-dl brightnessctl nodejs npm code gimp inkscape tlp \
+		texlive-most #linux-lts linux-lts-headers
 }
 
 # delete dotfiles that we already have:
@@ -30,18 +30,18 @@ dotsdelete() {
 	done
 	# delete temp files
 	rm -rf 2.txt  ~/tmpdotfiles
+	# clone .dotfiles
+	git clone --bare https://github.com/mathbike/.dotfiles.git ~/.dotfiles
+	# checkout repo
+	/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout
+	# do not show untracked files
+	/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME --local status.showUntrackedFiles no
 }
 
 # clone dotfiles:
 dotfiles() {
-	# clone .dotfiles
-	git clone --bare https://github.com/mathbike/.dotfiles.git ~/.dotfiles
 	# temp config alias
 	alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-	# delete dotfiles that we already have
-	#mkdir -p .config-backup && \
-	#config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
-	#xargs -I{} mv {} .config-backup/{}
 	# checkout repo
 	config checkout
 	# do not show untracked files
@@ -63,11 +63,12 @@ configuration() {
 	cd ~/.config/st && sudo make install
 	# dmenu
 	git clone https://github.com/mathbike/dmenu.git ~/.config/dmenu
-	cd ~/.config/dmenu && sudo make install && cd
+	cd ~/.config/dmenu && sudo make install
 }
 
 # clone directories:
 directories() {
+	cd
 	git clone https://github.com/mathbike/commands.git
 	git clone https://github.com/mathbike/scripts.git
 	git clone https://github.com/mathbike/browserconfig.git
@@ -83,6 +84,7 @@ aurhelper() {
 # install aur packages:
 aurpackages() {
 	# brave
+	cd
 	yay -S brave-bin --noconfirm
 	rm -rf  ~/.config/BraveSoftware/Brave-Browser/Default
 	cp -r  ~/browserconfig/Default ~/.config/BraveSoftware/Brave-Browser
@@ -92,7 +94,19 @@ aurpackages() {
 
 # FreeCAD
 freecad() {
+	cd
 	yay -S freecad-git --noconfirm
+}
+
+# openrazer
+openrazer() {
+	cd
+	yay -S openrazer-meta --noconfirm
+	# add user to plugdev
+	gpasswd -a mike plugdev
+	# then reboot
+	# install GUI
+	yay -S razercommander --noconfirm
 }
 
 # set symlinks:
@@ -115,6 +129,7 @@ firewall() {
 
 # general housekeeping:
 housekeeping() {
+	cd
 	# rename Downloads directory
 	rm -rf Downloads && mkdir dl
 	# set the timezone
@@ -138,6 +153,17 @@ asus() {
 	xinput -disable 12
 }
 
+hp() {
+	# disable laptop display
+	xrandr --output eDP-1 --off
+	# disable touchscreen
+	xinput -disable 15
+	# disable webcam
+	xinput -disable 13
+       # disable IR camera
+	xinput -disable 14       
+}
+
 T420() {
 	:
 }
@@ -146,18 +172,20 @@ X220() {
 	:
 }
 
-packages
-dotsdelete
-dotfiles
-configuration
-aurhelper
-aurpackages
+#packages
+#dotsdelete
+#dotfiles
+#configuration
+#directories
+#aurhelper
+#aurpackages
 #freecad
-directories
-symlinks
-firewall
-housekeeping
+#openrazer
+#symlinks
+#firewall
+#housekeeping
 #asus
+#hp
 #T420
 #X220
 
